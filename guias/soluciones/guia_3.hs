@@ -20,13 +20,13 @@ absoluto x  | x < 0 = -(x)
             | otherwise = x
 
 --2b
-mx1imoAbsoluto :: Integer -> Integer -> Integer
-mx1imoAbsoluto x y | absoluto (x) > absoluto (y) = absoluto (x)
+maximoAbsoluto :: Integer -> Integer -> Integer
+maximoAbsoluto x y | absoluto (x) > absoluto (y) = absoluto (x)
                    | otherwise = absoluto (y)
 
 --2c
-mx1imo3 :: Integer -> Integer -> Integer -> Integer 
-mx1imo3 a b c | (a >= b) && (a >= c) = a
+maximo3 :: Integer -> Integer -> Integer -> Integer 
+maximo3 a b c | (a >= b) && (a >= c) = a
               | (a >= b) && (a <= c) = c 
               | (a <= b) && (c <= b) = b
               | otherwise = c
