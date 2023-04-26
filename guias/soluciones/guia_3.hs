@@ -11,12 +11,8 @@ g y | y == 8 = 16
     | y == 131 = 1
 
 h = f . g
-
 k = g . f 
-
-{- se usa el (.)para componer funciones, y se lee "f compuesta de g" 
-para "f . g" -}
-
+ 
 --Ejercicio 2 
 --2a
 absoluto :: Integer -> Integer
