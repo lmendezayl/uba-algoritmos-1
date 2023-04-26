@@ -7,7 +7,8 @@ main = do {
 
 combinacionesMenoresOiguales :: Integer -> Integer
 -- Completar la definición de la función
-
+combinacionesMenoresOIguales n | n < 1 = undefined
+                               | otherwise = sum [if i*j <= n then 1 else 0 | i <- [1..n], j <- [1..n]]
 -- Pueden agregan las funciones que consideren necesarias
 
 
