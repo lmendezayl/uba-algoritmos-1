@@ -73,3 +73,29 @@ f3 n q | n == 1 = q^2 + q
 --10d
 f4 :: Integer -> Float -> Float 
 f4 n q = f3 n q - f2 (n-1) q
+
+-- Ejercicio 12
+raizDe2Aprox :: Integer -> Float
+raizDe2Aprox n = sucesion12 n - 1
+
+sucesion12 :: Integer -> Float
+sucesion12  n | n == 0 = 2
+            | otherwise = 2 + (1 / raizDe2Aprox (n-1))
+
+ -- Ejercicio 13
+sumatoriaDoble :: Integer -> Integer -> Integer
+sumatoriaDoble n m | n == 0 = 0
+                   | otherwise = sumatoriaInterna (n-1) m + sumatoriaInterna n m
+
+sumatoriaInterna :: Integer -> Integer -> Integer
+sumatoriaInterna n m | m == 0 = 0
+                     | otherwise = n^m + sumatoriaInterna n (m-1)
+
+-- Ejercicio 14
+sumaPotencias :: Integer -> Integer -> Integer -> Integer
+sumaPotencias q n m | n == 0 = 0
+                    | otherwise = sumatoriaM q n m + sumatoriaM q (n-1) m
+
+sumatoriaM :: Integer -> Integer -> Integer -> Integer
+sumatoriaM q n m | m == 0 = 0
+                   | otherwise = q^(n+m) + sumatoriaM q n (m-1)
