@@ -1,58 +1,69 @@
+-- DISCLAIMER: hay varios ejercicios que tienen la forma funcionP
+-- Esto significa que fue creada usando funciones del Prelude de Haskell
+-- y no fueron hechas usando recursion, como se pide en la guia.
+
+
 --Ejercicio 1
 
 --1.1
+longitudP :: [t] -> Int
+longitudP xs = length xs
+
 longitud :: [t] -> Int
-longitud xs = length xs
+longitud [] = 0
+longitud (x:xs) = 1 + longitud xs 
 
-longitudR :: [t] -> Int
-longitudR [] = 0
-longitudR (x:xs) = 1 + longitudR xs 
-
--- (x:xs) saca la x como head xs y dsps evalia para xs, la mete 
+-- (x:xs) saca la x como head xs y dsps evalua para xs, la mete 
 -- de nuevo y vuelve a sacar x como head xs, y suma 1 hasta que sea []
 
 -- x es la head de la lista (x:xs) y xs es la tail de la lista (x:xs)
+
 -- head xs es el primer elemento de la lista xs
 -- tail xs es la lista obtenida eliminando el primer elemento de xs
 
 --1.2
+ultimoP :: [t] -> t
+ultimoP xs = last xs
+
 ultimo :: [t] -> t
-ultimo xs = last xs
+ultimo (x:xs) | longitud (x:xs) == 1 = x
+              | otherwise = ultimo xs
 
-ultimoR :: [t] -> t
-ultimoR (x:xs) | longitud (x:xs) == 1 = x
-               | otherwise = ultimoR xs
-
--- ultimoR toma una lista (x:xs) y la evalua, si la longitud de la lista es 1
+-- ultimo toma una lista (x:xs) y la evalua, si la longitud de la lista es 1
 -- devuelve la head de la lista, ya que es el unico y ultimo valor; sino, devuelve la funcion
--- ultimoR de la tail de la lista, hasta que cumpla el caso base. 
+-- ultimo de la tail de la lista, hasta que cumpla el caso base. 
 
 --1.3
-principio :: [t] -> [t]
-principio xs = init xs
+principioP :: [t] -> [t]
+principioP xs = init xs
 
-principioR :: [t] -> [t]
-principioR (x:xs) | longitud (x:xs) == 1 = []
-                  | otherwise = x : principioR xs
+principio :: [t] -> [t]
+principio (x:xs) | longitud (x:xs) == 1 = []
+                 | otherwise = x : principio xs
 
 --1.4
-reverso :: [t] -> [t]
-reverso xs = reverse xs
+reversoP :: [t] -> [t]
+reversoP xs = reverse xs
 
-reversoR :: [t] -> [t]
-reversoR (x:xs) | longitud (x:xs) == 1 = (x:xs)
-                | otherwise = reversoR xs ++ [x]
+reverso :: [t] -> [t]
+reverso (x:xs) | longitud (x:xs) == 1 = (x:xs)
+               | otherwise = reverso xs ++ [x]
 
 --Ejercicio 2
 
 --2.1 
-pertenece :: (Eq t) => t -> [t] -> Bool 
-pertenece x ys = elem x ys
+perteneceP :: (Eq t) => t -> [t] -> Bool 
+perteneceP x ys = elem x ys
 
-perteneceR :: (Eq t) => t -> [t] -> Bool
-perteneceR e s | longitud s == 0 = False
-               | e == head s = True
-               | otherwise = perteneceR e (tail s)
+pertenece :: (Eq t) => t -> [t] -> Bool
+pertenece e s | longitud s == 0 = False
+              | e == head s = True
+              | otherwise = pertenece e (tail s)
+
+-- Definicion por pattern matching sacada de Wikipedia/Type_class
+elemlist :: Eq a => a -> [a] -> Bool
+elemlist y []     = False
+elemlist y (x:xs) = (x == y) || elemlist y xs
                 
 --2.2
 todosIguales :: (Eq t) => [t] -> Bool
@@ -63,5 +74,19 @@ todosIguales s | longitud s == 0 = True
 --2.3
 todosDistintos :: (Eq t) => [t] -> Bool 
 todosDistintos s | longitud s == 0 = True
-                 | perteneceR (head s) (tail s) == True = False
+                 | pertenece (head s) (tail s) == True = False
                  | otherwise = todosDistintos (tail s)
+
+--2.4
+hayRepetidos :: (Eq t) => [t] -> Bool 
+hayRepetidos s | longitud s == 0 = False
+               | pertenece (head s) (tail s) == True = True
+               | otherwise = hayRepetidos (tail s)
+
+--2.5
+quitarP :: (Eq t) => t -> [t] -> [t] 
+quitarP x xs = filter (/=x) xs
+
+quitar :: (Eq t) => t -> [t] -> [t] 
+quitar x xs | longitud xs == 0 = []
+            | pertenece x xs == True = xs 
