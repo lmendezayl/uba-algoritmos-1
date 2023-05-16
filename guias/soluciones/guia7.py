@@ -136,6 +136,7 @@ def vacas_o_laburo(sexo: str, edad: int) -> str:
 # 6.1
 # def impr_1_al_10():
 
+
 # 6.2 
 def impr_10_al_40():
     i = 10
@@ -149,5 +150,22 @@ def eco():
     while (i <= 10):
         print("eco")
         i +=1
+
+# 6.4 
+def despegue (num: int):
+    while (num >= 1):
+        print (num)
+        num -= 1
+    print ("Despegue")
+
+# 6.5 
+def viajeEnElTiempo (partida: int, llegada: int):
+    if (partida <= llegada):
+        return "No se puede viajar al pasado"
+    else:
+        while (partida > llegada):
+            partida -= 1
+            print ("Viajo al pasado, estamos en el " + str(partida))
+
 
 
