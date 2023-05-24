@@ -1,9 +1,5 @@
-# PRIMERA PARTE
-
 # Ejercicio 1
-
 # 1.1
-
 # Importar modulo array
 from array import *
 
@@ -27,7 +23,7 @@ def divideATodos(s: list([int]), e: int) -> bool:
         else: 
             return False
     return True
-        
+   
 def divideATodos2(s: list, e: int):
     for i in s:
         if i % e == 0:            
@@ -62,7 +58,12 @@ def palabraMayorASiete(lista: list[str]) -> bool:
         else:
     return True
 
-listaStr = ["hola","elpepe"]
-listaStr2 = ["holwwwwwa","elpepe"]
-print(palabraMayorASiete(listaStr))
-print(palabraMayorASiete(listaStr2))
+# 1.6
+def esPalindroma(palabra: str) -> bool:
+    palabra = palabra.lower()   
+    for letra in palabra:  # pasa la palabra a lowercase
+        if letra != palabra[-1]:  # evalua la primer letra con la ultima.
+            return False
+        else:
+            palabra = palabra [:-1:]  # devuelve la palabra pero sin la ultima letra, s[i:j:k]
+    return True
