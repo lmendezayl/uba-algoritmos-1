@@ -1,9 +1,9 @@
 
-# Guia 7: Introduccion a Lenguaje Imperativo
+# Guia práctica 7: Introduccion a Lenguaje Imperativo
 
 from math import *
 
-class soluciones:
+class implementacionesGuia7:
     
     # Ejercicio 1. 
     # Definir las siguientes funciones y procedimientos:
