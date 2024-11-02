@@ -19,7 +19,7 @@
 
 Este repositorio contiene las guías y materiales del curso **Algortimos y Estructuras de Datos 1 - Introducción a la Programación** dictada en el 1C2023. Forma parte del plan de estudios del primer año de la carrera de **Ciencia de Datos / Computacion** en el departamento de Computación. 
 
-Esta materia está diseñada para proporcionar a los estudiantes una base sólida en los conceptos fundamentales de la programación, preparándolos para cursos más avanzados y su futura carrera en datos o computacion.
+Estas soluciones **no son oficiales de la materia**. Las hice cuando cursaba la materia y las fui corrigiendo, pero aun asi, no te confies... Intenta hacerlo solo, es el mejor criterio que uno puede tener, pero si te trabas... bueno. Nos pasa a _todos_.
 
-Si te gustaria aportar tus propias soluciones, sentite comodo de hacer un fork y hacer un PR. Y si queres repositorios del 2C2023, podes chusmear los repos de mis grandes amigos [Fausto Martinez](https://gitlab.com/faustomartinez/uba-algoritmos-y-estructuras-de-datos-i) o  [Laura Bailleres](https://github.com/laurabailleres/introprogramacion)
+Si te gustaria aportar tus propias soluciones, sentite comodo de hacer un fork y hacer un PR. Y si queres repositorios de la cursada del 2C2023, podes chusmear los repos de mis grandes amigos [Fausto Martinez](https://gitlab.com/faustomartinez/uba-algoritmos-y-estructuras-de-datos-i) o  [Laura Bailleres](https://github.com/laurabailleres/introprogramacion)
 
